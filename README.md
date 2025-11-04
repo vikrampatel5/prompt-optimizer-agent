@@ -29,20 +29,16 @@ pip install -e .
 Create a `.env` file in the project root or set environment variables in your shell. The project expects keys for the LLM and vector DB. Suggested variables:
 
 - GOOGLE_API_KEY (or credentials required by your chosen chat model integration)
-- OPENAI_API_KEY (if you plan to use OpenAI models)
 - CHROMA_API_KEY (or equivalent) — your ChromaDB Cloud API key
 - CHROMA_TENANT — your ChromaDB tenant id
-- CHROMA_DATABASE — your ChromaDB database name
 
 Example `.env` (DO NOT commit this file):
 
 ```text
 # .env (example)
 GOOGLE_API_KEY=ya29.A0AR...your-google-key...
-OPENAI_API_KEY=sk-...your-openai-key...
 CHROMA_API_KEY=ck-...your-chroma-key...
 CHROMA_TENANT=your-tenant-id
-CHROMA_DATABASE=dev
 ```
 
 Important: `setup_db.py` and `prompt_optimizer.py` currently contain example/hardcoded values in the repository. Before running anything against a real ChromaDB account, review these files and replace hardcoded keys with environment-based configuration.
